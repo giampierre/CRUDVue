@@ -20,6 +20,6 @@ Route::get('articulos', function () {
 });
 
 Route::get('getArticulos','ArticulosController@getArticulos');
-Route::post('registrarArticulo','ArticulosController@registrarArticulo');
+Route::post('saveArticulo','ArticulosController@saveArticulo');
 
 

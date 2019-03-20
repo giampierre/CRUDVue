@@ -11,6 +11,15 @@ window.Vue = require('vue');
 window.VueRouter = require('vue-router').default;
 window.Axios = require('axios').default;
 
+import "chart.js";
+import "hchs-vue-charts";
+Vue.use(window.VueCharts);
+
+import Vue from 'vue'
+import VCharts from 'v-charts'
+
+Vue.use(VCharts)
+
 window.Axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest',
     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
@@ -43,7 +52,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import ArticulosLista from './components/articulos/ArticulosComponent.vue'
+import ArticulosLista from './components/articulos/ArticulosLista.vue'
+import ArticulosChart from './components/articulos/ArticulosChart.vue'
 
 const routes = [{
     path: '/',
@@ -56,6 +66,11 @@ const routes = [{
         path: '/articulos/lista',
         component: ArticulosLista,
         name: 'articuloslista'
+    },
+    {
+        path: '/articulos/chart',
+        component: ArticulosChart,
+        name: 'articuloschart'
     },
 
 ];

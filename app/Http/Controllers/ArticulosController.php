@@ -13,7 +13,7 @@ class ArticulosController extends Controller
         return $articulos;
     }
 
-    public function registrarArticulo(Request $request)
+    public function saveArticulo(Request $request)
     {
         $Articulos = new Articulos;
         $Articulos->codigo = $request->input('codigo');
